@@ -8,24 +8,23 @@ $(document).ready(function(){
     {
         console.log("ok");
         $thisCheck.parent().nextAll().removeAttr("disabled");
-        $thisCheck.parent().nextAll().attr( "enabled", "enabled" );
-        
+        $thisCheck.parent().nextAll().attr( "enabled", "enabled" );    
     }
     else{
         console.log("no");
         $thisCheck.parent().nextAll().removeAttr("enabled");
         $thisCheck.parent().nextAll().attr( "disabled", "disabled" );
-        $cla=$thisCheck.parent().parent().hasClass('s');
-        console.log($cla);
         if($thisCheck.parent().parent().hasClass('s'))
             {
                 console.log("second field")
                 $(".text").attr( "disabled", "disabled" );
+                $(".check").prop('checked', false);
             }
             if($thisCheck.parent().parent().hasClass('t'))
             {
                 $("#numperc").attr( "disabled", "disabled" );
                 $("#numInt").attr( "disabled", "disabled" );
+                $(".radio").prop('checked', false);
             }   
     }
     });
