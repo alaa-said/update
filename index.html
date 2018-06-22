@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Entitlemints </title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+<form>
+
+<!--  first requirment -->
+    <fieldset class="mtop f">
+    <legend> Schooling </legend>
+    <span> Entitled For Schooling </span> 
+    <label class="switch">
+        <input type="checkbox" class="tog">
+        <span class="slider round"></span>
+    </label><br/><br/>
+    <span>Number Of Children: </span> <input type="number" id="two" disabled placeholder="max 2 number" >
+    <span class="mLeft">Amount Per Children:</span> <input type="number" id="five" disabled placeholder="max 5 number"><br>
+    </fieldset>
+
+<!--  second requirment -->
+    <fieldset class="mtop s">
+        <legend> Insurance </legend>
+        <span> Entitled For Insurance </span> 
+        <label class="switch">
+            <input type="checkbox" class="tog">
+            <span class="slider round"></span>
+        </label><br/><br/>
+        <input type="checkbox" class="check" disabled > Life Insurance        
+        <div>
+            <span class="mLeft">Insurance Coverage:</span> <input type="text" disabled  class="text"
+            required maxLength="50" placeholder="to 50 characters">
+            <span class="mLeft">Premium Amount:</span> <input type="text" disabled class="text"
+            required maxLength="50" placeholder="to 50 characters"><br>
+        </div>
+        <br>
+        <input type="checkbox" class="check" disabled>Medical Insurance
+        <div>
+            <span class="mLeft">Insurance Coverage:</span> <input type="text" disabled  class="text" placeholder="to 50 characters">
+            <span class="mLeft">Premium Amount:</span> <input type="text" disabled class="text" placeholder="to 50 characters">
+        </div>
+        </fieldset>
+
+<!--  third requirment -->
+    <fieldset class="mtop t">
+        <legend> Bonus </legend>
+        <span> Entitled For Bonus </span> 
+        <label class="switch">
+                <input type="checkbox" class="tog">
+                <span class="slider round"></span>
+        </label><br/><br/>
+        <span class="center"> Bonus Type </span> 
+        <select disabled >
+                <option value="volvo">Profitability</option>
+                <option value="saab">Cumilative</option>
+                <option value="opel">Qualitative</option>
+        </select> <br/><br/><br/>
+        <span > Amount Type </span><br/><br/>
+        <input type="radio" name="Bonus" value="Fixed" disabled class="radio mLeft" >  Fixed
+        <div class="inline">
+            <input type="number"  id="numInt" disabled placeholder="max 5 number intiger" >
+        </div>
+        <input type="radio" name="Bonus" value="Percentage" disabled class="mLeft radio">  Percentage
+        <div class="inline">
+            <input type="number" disabled placeholder="max number 100" id="numperc"> %   
+        </div>
+    </fieldset>
+</form>
+
+
+
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+		
+</body>
+</html>
