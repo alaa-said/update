@@ -1,37 +1,35 @@
 $(document).ready(function(){
-
     // toggle disabled and enabled
     $('.tog').click (function ()
     {
     $thisCheck = $(this);
     if ($thisCheck.is (':checked'))
     {
-        console.log("ok");
         $thisCheck.parent().nextAll().removeAttr("disabled");
         $thisCheck.parent().nextAll().attr( "enabled", "enabled" );    
     }
     else{
-        console.log("no");
         $thisCheck.parent().nextAll().removeAttr("enabled");
         $thisCheck.parent().nextAll().attr( "disabled", "disabled" );
+        $thisCheck.parent().parent().find('input').val(null);
+        $thisCheck.parent().parent().find('input').css("border-color","gray");
+        // $thisCheck.parent().parent().find('input').removeAttr("enabled");
+        // $thisCheck.parent().parent().find('input').attr( "disabled", "disabled" );
+        $thisCheck.parent().parent().find('input').prop('checked', false);
         if($thisCheck.parent().parent().hasClass('s'))
             {
-                console.log("second field")
                 $(".text").attr( "disabled", "disabled" );
-                $(".check").prop('checked', false);
+                $(".text").val(null);
             }
             if($thisCheck.parent().parent().hasClass('t'))
             {
                 $("#numperc").attr( "disabled", "disabled" );
                 $("#numInt").attr( "disabled", "disabled" );
-                $(".radio").prop('checked', false);
             }   
     }
     });
-
-   
-//  validation to max length be 2
-    
+  
+//  validation to max length be 2  
     $("#two").keyup(function (e){
         $len=$("#two").val();
         if ($len.length > 2)
@@ -59,9 +57,7 @@ $(document).ready(function(){
         }
     });
 
-
     // validation in text to max length be 50
-
     $(".text").keyup(function (e){
         $len=$(this).val();
         if ($len.length > 50)
@@ -84,8 +80,7 @@ $(document).ready(function(){
             $(this).css("border-color","red");
         }
         else{
-            $(this).css("border-color","gray");
-            
+            $(this).css("border-color","gray");    
         }
     });
 
@@ -107,14 +102,13 @@ $(document).ready(function(){
         $thisCheck = $(this); 
         if ($thisCheck.is (':checked'))
         {
-            console.log("ok");
             $thisCheck.next().children().removeAttr("disabled");
             $thisCheck.next().children().attr( "enabled", "enabled" );  
         }
         else{
-            console.log("no");
             $thisCheck.next().children().removeAttr("enabled");
             $thisCheck.next().children().attr( "disabled", "disabled" );   
+            $thisCheck.next().children().val(null);
         }
     });
 
@@ -124,28 +118,24 @@ $(document).ready(function(){
         $thisCheck = $(this);
         if ($thisCheck.is (':checked'))
         {
-            console.log("ok");
             $thisCheck.next().children().removeAttr("disabled");
             $thisCheck.next().children().attr( "enabled", "enabled" );
-
             if($thisCheck.next().children().is('#numInt'))
             {
                 $("#numperc").attr( "disabled", "disabled" );
+                $("#numperc").val(null);
+                $("#numperc").css("border-color","gray");
             }
             if($thisCheck.next().children().is('#numperc'))
             {
                 $("#numInt").attr( "disabled", "disabled" );
-            }
-            
+                $("#numInt").val(null);
+                $("#numInt").css("border-color","gray");
+            }    
         }
         else{
-            console.log("no");
             $thisCheck.next().children().removeAttr("enabled");
-            $thisCheck.next().children().attr( "disabled", "disabled" );
-            
+            $thisCheck.next().children().attr( "disabled", "disabled" );   
         }
-
-    });
-
-    
+    });   
 });
